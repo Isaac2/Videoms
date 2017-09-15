@@ -12,15 +12,13 @@ const PORT = process.env.PORT || 5000;
 
 var express  = require ('express');
 var multer  = require('multer');
-var fileUpload = require('express-fileupload');
 
 //setup server
 console.log('Starting server...');
 var app = express();
-var upload = multer({ dest: 'uploads/' });
-app.use(fileUpload());
 
-require ('./routes') (app,upload);
+
+require ('./routes') (app);
 
 app.listen(PORT);
 console.log('Server listening on port: ' + PORT);
